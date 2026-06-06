@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiangchen Wang</title>
+  <style>
+    :root {
+      --ink: #2b2b2b;
+      --muted: #5f6368;
+      --line: #e5e7eb;
+      --link: #2f6f9f;
+      --soft: #f7f8fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.62;
+    }
+
+    .masthead {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .masthead__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .site-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202124;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: #3c4043;
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--link); }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 28px 60px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 48px;
+    }
+
+    aside {
+      position: sticky;
+      top: 78px;
+      align-self: start;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .author h2 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .author p {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .github {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main { max-width: 780px; }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: 34px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 19px;
+    }
+
+    p { margin: 0 0 16px; }
+    ul { padding-left: 22px; margin-top: 8px; }
+    li { margin: 7px 0; }
+    a { color: var(--link); }
+
+    .paper {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .paper h3 { margin-top: 0; }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0 4px;
+    }
+
+    .button {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 6px 10px;
+      text-decoration: none;
+      color: var(--link);
+      background: var(--soft);
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 26px;
+      padding: 12px 14px;
+      border-left: 3px solid #78a6c8;
+      background: #f8fbfd;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    @media (max-width: 780px) {
+      .masthead__inner {
+        padding: 12px 18px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      nav { gap: 14px; }
+
+      .wrap {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 18px 46px;
+      }
+
+      aside { position: static; }
+      .avatar { width: 132px; height: 132px; }
+      h1 { font-size: 29px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="site-title" href="#home">Xiangchen Wang</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#langdc">LangDC</a>
+        <a href="#livevln">LiveVLN</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <aside class="author">
+      <img class="avatar" src="images/profile.png" alt="Xiangchen Wang profile photo">
+      <h2>Xiangchen Wang</h2>
+      <p>Ph.D. student at Zhejiang University, starting Fall 2026. M.S. in Computer Science, SUSTech.</p>
+      <p>Hangzhou / Shenzhen, China</p>
+      <p>Zhejiang University</p>
+      <a class="github" href="https://github.com/NIneeeeeem">GitHub: NIneeeeeem</a>
+    </aside>
+
+    <main id="home">
+      <h1>About</h1>
+      <p>I am a researcher working on vision-language learning, video understanding, and embodied navigation. My recent work studies how multimodal systems can use computation more adaptively, either by compressing video tokens according to semantic density or by making vision-language navigation systems execute more continuously in real-world settings.</p>
+      <p>I am currently completing my M.S. in Computer Science at Southern University of Science and Technology (SUSTech), and will begin my Ph.D. study at Zhejiang University in Fall 2026.</p>
+
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Ph.D.</strong>, Zhejiang University, Fall 2026-</li>
+        <li><strong>M.S.</strong>, Southern University of Science and Technology, 2023-2026</li>
+        <li><strong>B.S.</strong>, Southern University of Science and Technology, 2019-2023</li>
+      </ul>
+
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Vision-language learning</li>
+        <li>Video understanding and efficient multimodal modeling</li>
+        <li>Embodied AI and vision-language navigation</li>
+        <li>Adaptive inference for real-world deployment</li>
+      </ul>
+
+      <h2 id="publications">Publications</h2>
+      <section class="paper" id="langdc">
+        <h3>Seeing More, Saying More: Lightweight Language Experts are Dynamic Video Token Compressors</h3>
+        <div class="meta">EMNLP 2025 Oral, 2025</div>
+        <p>LangDC is a language-aware dynamic token compressor for large video-language models. It uses lightweight language experts to describe clips, converts descriptions into soft caption tokens, and dynamically adjusts compression ratios according to semantic density.</p>
+        <p><strong>Result:</strong> 49% FLOPs reduction compared with VideoGPT+ while maintaining competitive performance.</p>
+        <div class="buttons">
+          <a class="button" href="https://arxiv.org/abs/2509.00969">Paper</a>
+          <a class="button" href="https://github.com/NIneeeeeem/LangDC">Code</a>
+        </div>
+      </section>
+
+      <section class="paper" id="livevln">
+        <h3>LiveVLN: Breaking the Stop-and-Go Loop in Vision-Language Navigation</h3>
+        <div class="meta">arXiv, 2026</div>
+        <p>LiveVLN is a training-free runtime framework that keeps actions continuously available during embodied vision-language navigation by overlapping execution with observation refresh and future-action updates.</p>
+        <p><strong>Result:</strong> StreamVLN waiting time drops from 7.32s to 1.63s; NaVIDA waiting time drops from 10.64s to 2.89s.</p>
+        <div class="buttons">
+          <a class="button" href="https://arxiv.org/abs/2604.19536">Paper</a>
+          <a class="button" href="https://github.com/NIneeeeeem/LiveVLN">Code</a>
+        </div>
+      </section>
+
+      <div class="note">Temporary visual preview rendered from the implemented site content. The committed Jekyll pages are the source of truth for deployment.</div>
+    </main>
+  </div>
+</body>
+</html>
