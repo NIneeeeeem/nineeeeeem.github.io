@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">CAPruner scene graph pruning poster</title>
+  <desc id="desc">A schematic 3D scene graph where task-relevant conceptual adjacent relations are highlighted after pruning.</desc>
+  <rect width="900" height="620" fill="#f8fafc"/>
+  <rect x="48" y="48" width="804" height="524" rx="18" fill="#ffffff" stroke="#d9e1e8" stroke-width="3"/>
+  <text x="86" y="120" fill="#24313d" font-family="Arial, sans-serif" font-size="54" font-weight="700">CAPruner</text>
+  <text x="86" y="164" fill="#65717d" font-family="Arial, sans-serif" font-size="25">Conceptual-adjacent scene graph pruning</text>
+  <g fill="none" stroke="#c8d1da" stroke-width="6" stroke-linecap="round">
+    <path d="M240 312 L384 230 L552 286 L656 410"/>
+    <path d="M240 312 L416 390 L656 410"/>
+    <path d="M384 230 L416 390"/>
+    <path d="M552 286 L416 390"/>
+  </g>
+  <g fill="none" stroke="#2f839c" stroke-width="10" stroke-linecap="round">
+    <path d="M240 312 L384 230"/>
+    <path d="M384 230 L552 286"/>
+    <path d="M552 286 L656 410"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle">
+    <circle cx="240" cy="312" r="58" fill="#e8f6fa" stroke="#2f839c" stroke-width="4"/>
+    <text x="240" y="320" fill="#24313d">Target</text>
+    <circle cx="384" cy="230" r="58" fill="#fff4df" stroke="#d89a2b" stroke-width="4"/>
+    <text x="384" y="238" fill="#24313d">Anchor</text>
+    <circle cx="552" cy="286" r="58" fill="#edf7ea" stroke="#5d9c59" stroke-width="4"/>
+    <text x="552" y="294" fill="#24313d">Concept</text>
+    <circle cx="416" cy="390" r="48" fill="#f1f3f5" stroke="#aeb8c2" stroke-width="4"/>
+    <text x="416" y="398" fill="#65717d">Noise</text>
+    <circle cx="656" cy="410" r="58" fill="#e8f6fa" stroke="#2f839c" stroke-width="4"/>
+    <text x="656" y="418" fill="#24313d">Relation</text>
+  </g>
+  <text x="86" y="520" fill="#45515c" font-family="Arial, sans-serif" font-size="27">Preserve task-critical 3D relations, prune redundant graph edges.</text>
+</svg>

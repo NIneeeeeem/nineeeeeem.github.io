@@ -1,30 +1,50 @@
 ---
+layout: default
 permalink: /
-title: "About"
-author_profile: true
+title: "Home"
+author_profile: false
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I am a researcher working on vision-language learning, video understanding, and embodied navigation. My recent work studies how multimodal systems can use computation more adaptively, either by compressing video tokens according to semantic density or by making vision-language navigation systems execute more continuously in real-world settings.
+<main class="page--wide" role="main">
+  <section class="profile-hero">
+    <img src="/images/profile.png" alt="Xiangchen Wang profile photo">
+    <div>
+      <h1>Xiangchen Wang</h1>
+      <p>video understanding, Multi-model Agent and embodied navigation.</p>
+    </div>
+  </section>
 
-I am currently completing my M.S. in Computer Science at Southern University of Science and Technology (SUSTech), and will begin my Ph.D. study at Zhejiang University in Fall 2026.
+  <p>I am currently completing my M.S. in Computer Science at Southern University of Science and Technology (SUSTech), and will begin my Ph.D. study at Zhejiang University in Fall 2026.</p>
 
-## Education
+  <h2 class="section-heading">News</h2>
+  <ul class="compact-list">
+  </ul>
 
-- **Ph.D.**, Zhejiang University, Fall 2026-
-- **M.S.**, Southern University of Science and Technology, 2023-2026
-- **B.S.**, Southern University of Science and Technology, 2019-2023
+  <h2 class="section-heading">Experience</h2>
+  <ul class="compact-list">
+    <li><strong>Ph.D.</strong>, Zhejiang University, from Fall 2026</li>
+    <li><strong>M.S.</strong>, Southern University of Science and Technology, 2023-2026</li>
+    <li><strong>B.S.</strong>, Southern University of Science and Technology, 2019-2023</li>
+  </ul>
 
-## Research Interests
 
-- Vision-language learning
-- Video understanding and efficient multimodal modeling
-- Embodied AI and vision-language navigation
-- Adaptive inference for real-world deployment
 
-## Selected Work
+  <!-- <h2 class="section-heading">Research Interests</h2>
+  <ul class="compact-list">
+    <li>Vision-language learning</li>
+    <li>Video understanding and efficient multimodal modeling</li>
+    <li>Embodied AI and vision-language navigation</li>
+    <li>Adaptive inference for real-world deployment</li>
+  </ul> -->
 
-- [LangDC: Seeing More, Saying More: Lightweight Language Experts are Dynamic Video Token Compressors](/langdc/)
-- [LiveVLN: Breaking the Stop-and-Go Loop in Vision-Language Navigation](/livevln/)
+  <h2 class="section-heading">Research</h2>
+  <div class="works-list">
+    {% assign works = site.data.works | sort: "date" | reverse %}
+    {% for work in works %}
+      {% include work-card.html work=work %}
+    {% endfor %}
+  </div>
+</main>

@@ -1,0 +1,35 @@
+{% include base_path %}
+{% assign work = include.work %}
+{% assign work_href = work.project_url | default: work.code_url | default: work.paper_url %}
+<article class="work-card" id="{{ work.slug }}">
+  <a class="work-card__media" href="{% if work_href contains 'http' %}{{ work_href }}{% else %}{{ work_href | prepend: base_path }}{% endif %}" aria-label="{{ work.short_title }} details">
+    <img src="{% if work.image contains 'http' %}{{ work.image }}{% else %}{{ work.image | prepend: base_path }}{% endif %}" alt="{{ work.short_title }} preview">
+  </a>
+  <div class="work-card__body">
+    <div class="work-card__meta-row">
+      <span class="work-card__year">{{ work.year }}</span>
+      <span class="work-card__venue">{{ work.venue }}</span>
+    </div>
+    <a class="work-card__title" href="{% if work_href contains 'http' %}{{ work_href }}{% else %}{{ work_href | prepend: base_path }}{% endif %}">{{ work.title }}</a>
+    <p class="work-card__authors">{{ work.authors }}</p>
+    <p class="work-card__summary">{{ work.summary }}</p>
+    <p class="work-card__result">{{ work.result }}</p>
+    <div class="work-links">
+      {% if work.project_url %}
+        <a href="{{ work.project_url | prepend: base_path }}">project</a>
+      {% endif %}
+      {% if work.code_url %}
+        {% if work.project_url %}<span>/</span>{% endif %}
+        <a href="{{ work.code_url }}">code</a>
+      {% endif %}
+      {% if work.paper_url %}
+        {% if work.project_url or work.code_url %}<span>/</span>{% endif %}
+        <a href="{{ work.paper_url }}">paper</a>
+      {% endif %}
+      {% if work.model_url %}
+        {% if work.project_url or work.code_url or work.paper_url %}<span>/</span>{% endif %}
+        <a href="{{ work.model_url }}">model</a>
+      {% endif %}
+    </div>
+  </div>
+</article>
