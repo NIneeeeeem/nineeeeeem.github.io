@@ -13,14 +13,22 @@ layout: default
       <p class="project-hero__affiliations">{{ page.affiliations }}</p>
     {% endif %}
     <div class="project-actions">
-      {% if page.projecturl %}
-        <a class="project-action" href="{{ page.projecturl | prepend: base_path }}">Project</a>
+      {% if page.projecturl and page.projecturl != page.url %}
+        {% if page.projecturl contains 'http' %}
+          {% assign project_href = page.projecturl %}
+        {% else %}
+          {% assign project_href = page.projecturl | prepend: base_path %}
+        {% endif %}
+        <a class="project-action" href="{{ project_href }}">Project</a>
       {% endif %}
       {% if page.paperurl %}
         <a class="project-action" href="{{ page.paperurl }}">Paper</a>
       {% endif %}
       {% if page.codeurl %}
         <a class="project-action" href="{{ page.codeurl }}">Code</a>
+      {% endif %}
+      {% if page.modelurl %}
+        <a class="project-action" href="{{ page.modelurl }}">Model</a>
       {% endif %}
     </div>
     {% if page.hero_image %}
