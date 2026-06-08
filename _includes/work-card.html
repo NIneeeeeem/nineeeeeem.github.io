@@ -1,6 +1,6 @@
 {% include base_path %}
 {% assign work = include.work %}
-{% assign work_href = work.paper_url | default: work.project_url | default: work.code_url %}
+{% assign work_href = work.project_url | default: work.paper_url | default: work.code_url %}
 <article class="work-card" id="{{ work.slug }}">
   <a class="work-card__media" href="{% if work_href contains 'http' %}{{ work_href }}{% else %}{{ work_href | prepend: base_path }}{% endif %}" aria-label="{{ work.short_title }} details">
     <img src="{% if work.image contains 'http' %}{{ work.image }}{% else %}{{ work.image | prepend: base_path }}{% endif %}" alt="{{ work.short_title }} preview">
