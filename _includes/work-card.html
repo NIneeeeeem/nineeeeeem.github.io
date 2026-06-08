@@ -11,24 +11,29 @@
       <span class="work-card__venue">{{ work.venue }}</span>
     </div>
     <a class="work-card__title" href="{% if work_href contains 'http' %}{{ work_href }}{% else %}{{ work_href | prepend: base_path }}{% endif %}">{{ work.title }}</a>
-    <p class="work-card__authors">{{ work.authors }}</p>
+    <p class="work-card__authors">
+      {% if work.authors_html %}{{ work.authors_html }}{% else %}{{ work.authors }}{% endif %}
+    </p>
+    {% if work.author_note %}
+      <p class="work-card__author-note">{{ work.author_note }}</p>
+    {% endif %}
     <p class="work-card__summary">{{ work.summary }}</p>
     <p class="work-card__result">{{ work.result }}</p>
     <div class="work-links">
       {% if work.project_url %}
-        <a href="{{ work.project_url | prepend: base_path }}">project</a>
+        <a href="{{ work.project_url | prepend: base_path }}"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> project</a>
       {% endif %}
       {% if work.code_url %}
         {% if work.project_url %}<span>/</span>{% endif %}
-        <a href="{{ work.code_url }}">code</a>
+        <a href="{{ work.code_url }}"><i class="fa-brands fa-github" aria-hidden="true"></i> code</a>
       {% endif %}
       {% if work.paper_url %}
         {% if work.project_url or work.code_url %}<span>/</span>{% endif %}
-        <a href="{{ work.paper_url }}">paper</a>
+        <a href="{{ work.paper_url }}"><i class="ai ai-arxiv" aria-hidden="true"></i> paper</a>
       {% endif %}
       {% if work.model_url %}
         {% if work.project_url or work.code_url or work.paper_url %}<span>/</span>{% endif %}
-        <a href="{{ work.model_url }}">model</a>
+        <a href="{{ work.model_url }}"><i class="fa-solid fa-cube" aria-hidden="true"></i> model</a>
       {% endif %}
     </div>
   </div>
